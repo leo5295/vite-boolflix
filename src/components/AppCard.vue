@@ -16,6 +16,13 @@ export default {
                 }
             }
             return stars;
+        },
+        emptyStars() {
+            let emptystars = [];
+            for (let i = 0; i < 5 - Math.round(this.movie.vote_average / 2); i++) {
+                emptystars.push(i);
+            }
+            return emptystars;
         }
 
     }
@@ -31,7 +38,7 @@ export default {
     {{ movie.vote_average}}
 </div>
 <div>
-    <p class="card-text">Voto: <i v-for="n in stars" class="fa fa-2x fa-star"></i></p>
+    <p class="card-text">Voto: <i v-for="n in stars" class="fa fa-2x fa-star"></i><i v-for="n in emptyStars" class="fa-regular fa-star"></i></p>
 </div>
 <div class="container d-flex">
     <img :src="posterUrl" alt="Poster" class="poster">
