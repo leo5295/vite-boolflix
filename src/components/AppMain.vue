@@ -19,7 +19,6 @@ export default {
         },
         filteredSeries() {
             return store.seriesList.filter(series => {
-                console.log("SERIES", series)
                 return series.name.toLowerCase().includes(this.search.toLowerCase())
             }
             )

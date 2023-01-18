@@ -16,6 +16,7 @@ export default {
   <div class="text-danger">
     {{ series.name}}
 </div>
+
 <div class="container d-flex">
     <img :src="posterUrl" alt="Poster" class="poster">
     <img :src="`https://www.countryflagicons.com/FLAT/64/${(series.original_language).toUpperCase()}.png`" alt="flag" class="flag">

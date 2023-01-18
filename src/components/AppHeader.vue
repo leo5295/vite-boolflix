@@ -21,6 +21,8 @@ export default {
                 </div>
                 <div class="col">
                     <input type="text" v-model="query" class="form-control w-50" placeholder="Inserisci film" />
+                </div>
+                <div class="col">
                     <button @click="emitQuery">Cerca</button>
                 </div>
             </div>
