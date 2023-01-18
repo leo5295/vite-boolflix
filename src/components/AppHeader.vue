@@ -1,22 +1,28 @@
 <script>
-import AppSearch from './AppSearch.vue';
 export default {
-    components: {
-        AppSearch,
+    data() {
+        return {
+            query: ""
+        }
+    },
+    methods: {
+        emitQuery() {
+            this.$emit("search", this.query);
+        }
     }
-}
+};
 </script>
-
-<template lang="">
+<template>
     <div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-9">
-                    <h1 class="text-danger">BOOLFLIX</h1>
+        <div class="container-fluid bg-black">
+            <div class="row d-flex align-items-center">
+                <div class="col">
+                    <h1 class="text-danger m-0">BOOLFLIX</h1>
                 </div>
-            </div>
-            <div class="col-3">
-                <AppSearch/>
+                <div class="col">
+                    <input type="text" v-model="query" class="form-control w-50" placeholder="Inserisci film" />
+                    <button @click="emitQuery">Cerca</button>
+                </div>
             </div>
         </div>
     </div>
@@ -24,15 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 .container-fluid {
-
-    height: 100px;
-    background-color: black;
-
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 80px;
 }
 </style>
+
+
+
