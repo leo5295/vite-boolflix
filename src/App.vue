@@ -2,6 +2,8 @@
 import { store } from './store'
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+
 export default {
   data() {
     return {
@@ -9,15 +11,25 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    AppHeader, AppMain
+  },
+  created() {
+    this.getMovies();
+  },
+  methods: {
+    getMovies() {
+      axios.get(store.url).then((response) => {
+        store.movieList = response.data.results;
+      });
+    }
   }
 }
-
 </script>
 
 <template>
   <div>
     <AppHeader />
+    <AppMain />
   </div>
 </template>
 
