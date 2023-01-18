@@ -4,11 +4,11 @@ export default {
     props: {
         series: Object
     },
-    // computed: {
-    //     posterUrl() {
-    //         return 'https://image.tmdb.org/t/p/original' + this.series.poster_path
-    //     }
-    // }
+    computed: {
+        posterUrl() {
+            return 'https://image.tmdb.org/t/p/original' + this.series.poster_path
+        }
+    }
 }
 </script>
 
@@ -17,8 +17,8 @@ export default {
     {{ series.name}}
 </div>
 <div class="container d-flex">
-    <!-- <img :src="posterUrl" alt="Poster" class="poster"> -->
-    <!-- <img :src="`https://www.countryflagicons.com/FLAT/64/${(series.original_language).toUpperCase()}.png`" alt="flag" class="flag"> -->
+    <img :src="posterUrl" alt="Poster" class="poster">
+    <img :src="`https://www.countryflagicons.com/FLAT/64/${(series.original_language).toUpperCase()}.png`" alt="flag" class="flag">
 
 </div>
 </template>
