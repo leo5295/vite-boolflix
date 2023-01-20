@@ -39,5 +39,9 @@ export default {
 </script>
 
 <style lang="scss" >
-@use './style/generals.scss'
+@use './style/generals.scss';
+
+html {
+  background-color: black;
+}
 </style>

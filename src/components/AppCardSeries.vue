@@ -13,13 +13,17 @@ export default {
 </script>
 
 <template lang="">
-  <div class="text-danger">
+  <h5 class="text-danger">
     {{ series.name}}
+</h5>
+<div class="text-white">
+    {{ series.vote_average}}
 </div>
 
 <div class="container d-flex">
     <img :src="posterUrl" alt="Poster" class="poster">
-    <img :src="`https://www.countryflagicons.com/FLAT/64/${(series.original_language).toUpperCase()}.png`" alt="flag" class="flag">
+    <!-- <img :src="`https://www.countryflagicons.com/FLAT/64/${(series.original_language).toUpperCase()}.png`" alt="flag" class="flag"> -->
+    <img :src="series.original_language == 'en'? `https://www.countryflagicons.com/FLAT/64/GB.png`: `https://www.countryflagicons.com/FLAT/64/${series.original_language.toUpperCase()}.png`" :alt="series.original_language" class="flag" />
 
 </div>
 </template>
@@ -28,7 +32,7 @@ export default {
 @use '../style/generals.scss';
 
 .poster {
-    height: 100px;
+    height: 500px;
 }
 
 .flag {

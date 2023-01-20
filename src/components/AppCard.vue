@@ -31,20 +31,19 @@ export default {
 </script>
 
 <template lang="">
-  <div>
+  <h5 class="text-white">
     {{ movie.title}}
-</div>
-<div>
+</h5>
+<div class="text-white">
     {{ movie.vote_average}}
 </div>
 <div>
-    <p class="card-text">Voto: <i v-for="n in stars" class="fa-solid fa-star"></i><i v-for="n in emptyStars" class="fa-regular fa-star"></i></p>
+    <p class="card-text text-white">Voto: <i v-for="n in stars" class="fa-solid fa-star text-white"></i><i v-for="n in emptyStars" class="fa-regular fa-star text-white"></i></p>
 </div>
 <div class="container d-flex">
     <img :src="posterUrl" alt="Poster" class="poster">
     <!-- <img :src="`https://www.countryflagicons.com/FLAT/64/${(movie.original_language).toUpperCase()}.png`" alt="flag" class="flag"> -->
     <img :src="movie.original_language == 'en'? `https://www.countryflagicons.com/FLAT/64/GB.png`: `https://www.countryflagicons.com/FLAT/64/${movie.original_language.toUpperCase()}.png`" :alt="movie.original_language" class="flag" />
-
 </div>
 </template>
 
@@ -52,7 +51,7 @@ export default {
 @use '../style/generals.scss';
 
 .poster {
-    height: 100px;
+    height: 500px;
 }
 
 .flag {
